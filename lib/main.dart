@@ -1,4 +1,5 @@
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/main_screen.dart';
+import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/sezonlar/sezon_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,8 @@ class HttpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainScreen(),
+      // home: MainScreen(),
+      home: SezonScreen(),
     );
   }
 }
