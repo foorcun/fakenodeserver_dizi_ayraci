@@ -12,8 +12,8 @@ class HttpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: MainScreen(),
-      home: SezonScreen(),
+      home: MainScreen(),
+      // home: SezonScreen(),
     );
   }
 }
