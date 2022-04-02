@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 class DiziController extends GetxController {
   final diziler = <Dizi>[].obs;
+  // isLoading
 
   // static final DiziController _singleton = DiziController._internal();
   // DiziController._internal();

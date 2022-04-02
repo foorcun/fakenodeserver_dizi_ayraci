@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainScreenGetx extends StatelessWidget {
-  const MainScreenGetx({Key? key}) : super(key: key);
+  MainScreenGetx({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(
-        () => Text("${Get.find<DiziController>().diziler[0].diziName}"),
+        () => Get.find<DiziController>().diziler.length != 0
+            ? Text("${Get.find<DiziController>().diziler[0].diziName}")
+            : Text(""),
       ),
     );
   }

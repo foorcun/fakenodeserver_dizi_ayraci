@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 //json-server --watch dizi_ayraci.json
 
 void main() {
-  // AllDiziBindings().dependencies();
+  AllDiziBindings().dependencies();
   runApp(const HttpApp());
 }
 
@@ -20,7 +20,7 @@ class HttpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialBinding: AllDiziBindings(),
+      // initialBinding: AllDiziBindings(),
       // home: MainScreen(),
       // home: SezonScreen(),
       home: MainScreenGetx(),
