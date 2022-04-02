@@ -33,13 +33,14 @@ class SezonsApi {
     }
 
     print(theList.toString());
-    theList = getByDiziId(theList, parentDiziId);
+    int theAmount = getByDiziId(theList, parentDiziId);
+    theList = theList.sublist(0, theAmount);
     print(theList.toString());
 
     return theList;
   }
 
-  static List<Sezon> getByDiziId(List<Sezon> theList, int val) {
+  static int getByDiziId(List<Sezon> theList, int val) {
     int l = 0;
     int r = 1;
     print("val değeri " + val.toString());
@@ -58,9 +59,9 @@ class SezonsApi {
           print("d");
 
           //swap
-          int temp = theList[l].parentDiziId;
-          theList[l].parentDiziId = theList[r].parentDiziId;
-          theList[r].parentDiziId = temp;
+          var temp = theList[l];
+          theList[l] = theList[r];
+          theList[r] = temp;
           l++;
           r++;
         } else {
@@ -70,6 +71,6 @@ class SezonsApi {
         }
       }
     }
-    return theList;
+    return l;
   }
 }
