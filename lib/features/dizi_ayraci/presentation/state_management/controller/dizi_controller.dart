@@ -27,7 +27,7 @@ class DiziController extends GetxController {
   }
 
   void fetchDiziler() async {
-    var d = await HttpDiziDB().getAllDizi();
+    var d = await DiziService().getAllDizi();
     diziler.assignAll(d);
   }
 }

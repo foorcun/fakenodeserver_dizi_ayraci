@@ -2,7 +2,7 @@ import 'package:fakenodeserver_dizi_ayraci/core/utils/json_helper.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/domain/entities/dizi.dart';
 import 'package:http/http.dart' as http;
 
-class HttpDiziDB {
+class DiziService {
   Future<List<Dizi>> getAllDizi() async {
     print("HttpDiziDB getAll");
 
