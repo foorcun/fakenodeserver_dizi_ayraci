@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 class DiziController extends GetxController {
   final diziler = <Dizi>[].obs;
+
   // isLoading
 
   // static final DiziController _singleton = DiziController._internal();
@@ -15,7 +16,7 @@ class DiziController extends GetxController {
     // TODO: implement onInit
 
     fetchDiziler();
-
+    print("diziler değer " + diziler.value.toString());
     // diziler.bindStream(HttpDiziDB().getAllDizi());
 
     // ever(qr, (_) {
@@ -28,6 +29,7 @@ class DiziController extends GetxController {
 
   void fetchDiziler() async {
     var d = await DiziService().getAllDizi();
+    print("ddd " + d.toString());
     diziler.assignAll(d);
   }
 }

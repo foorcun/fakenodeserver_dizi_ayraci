@@ -1,4 +1,5 @@
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/state_management/controller/dizi_controller.dart';
+import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/state_management/controller/sezon_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,6 +21,18 @@ class MainScreenGetx extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                         Get.find<DiziController>().diziler[index].diziName),
+                    onTap: () {
+                      print("index " + index.toString());
+                      print("Get.find<DiziController>().diziler[index].id " +
+                          Get.find<DiziController>()
+                              .diziler[index]
+                              .id
+                              .toString());
+                      Get.find<SezonController>().setSecilenDiziId(
+                          Get.find<DiziController>().diziler[index].id);
+
+                      Get.toNamed("/SezonlarByDizi");
+                    },
                   ),
                 );
               })),

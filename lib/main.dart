@@ -30,7 +30,7 @@ class HttpApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Dizi App',
       // initialRoute: homePageBringer(),
-      initialRoute: "/SezonlarByDizi",
+      initialRoute: "/main_screen_getx",
 
       getPages: [
         GetPage(name: "/main_screen_getx", page: () => MainScreenGetx()),

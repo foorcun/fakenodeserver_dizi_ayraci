@@ -32,19 +32,31 @@ class SezonsApi {
       theList.add(Sezon.fromJson(listJson[i]));
     }
 
-    return getByDiziId(theList, parentDiziId);
+    print(theList.toString());
+    theList = getByDiziId(theList, parentDiziId);
+    print(theList.toString());
+
+    return theList;
   }
 
   static List<Sezon> getByDiziId(List<Sezon> theList, int val) {
     int l = 0;
     int r = 1;
+    print("val değeri " + val.toString());
 
     while (r < theList.length) {
+      print("a");
       if (theList[l].parentDiziId == val) {
+        print("b");
+
         l++;
         r++;
       } else {
+        print("c");
+
         if (theList[r].parentDiziId == val) {
+          print("d");
+
           //swap
           int temp = theList[l].parentDiziId;
           theList[l].parentDiziId = theList[r].parentDiziId;
@@ -52,6 +64,8 @@ class SezonsApi {
           l++;
           r++;
         } else {
+          print("e");
+
           r++;
         }
       }

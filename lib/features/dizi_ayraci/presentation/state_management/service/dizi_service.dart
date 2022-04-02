@@ -17,7 +17,7 @@ class DiziService {
     for (var i = 0; i < listJson.length; i++) {
       theList.add(Dizi.fromJson(listJson[i]));
     }
-
+    print("DiziService theList " + theList.toString());
     return theList;
   }
 }
