@@ -1,4 +1,3 @@
-import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/main_screen.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/main_screen_getx.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/sezonlar/sezon_screen.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/state_management/all_dizi_bindings.dart';
@@ -20,10 +19,20 @@ class HttpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // initialBinding: AllDiziBindings(),
-      // home: MainScreen(),
-      // home: SezonScreen(),
-      home: MainScreenGetx(),
+      // // initialBinding: AllDiziBindings(),
+      // // home: MainScreen(),
+      // // home: SezonScreen(),
+      // home: MainScreenGetx(),
+
+      debugShowCheckedModeBanner: false,
+      title: 'Dizi App',
+      // initialRoute: homePageBringer(),
+      initialRoute: "/main_screen_getx",
+
+      getPages: [
+        GetPage(name: "/main_screen_getx", page: () => MainScreenGetx()),
+        GetPage(name: "/SezonScreen", page: () => SezonScreen()),
+      ],
     );
   }
 }

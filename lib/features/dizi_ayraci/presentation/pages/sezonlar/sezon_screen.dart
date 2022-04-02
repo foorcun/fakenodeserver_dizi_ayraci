@@ -10,7 +10,7 @@ class SezonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-          future: SezonsApi.getDiziler(),
+          future: SezonsApi.getSezonlar(),
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return Center(

@@ -3,7 +3,7 @@ import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/domain/entities/
 import 'package:http/http.dart' as http;
 
 class SezonsApi {
-  static Future getDiziler() async {
+  static Future getSezonlar() async {
     Uri myUri = Uri.parse("http://127.0.0.1:3000/sezonlar");
 
     http.Response response = await http.get(myUri);
