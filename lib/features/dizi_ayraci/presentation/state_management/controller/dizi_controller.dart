@@ -1,6 +1,7 @@
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/domain/entities/dizi.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/state_management/service/dizi_service.dart';
 import 'package:get/get.dart';
+import 'package:http/retry.dart';
 
 class DiziController extends GetxController {
   final diziler = <Dizi>[].obs;
@@ -31,5 +32,13 @@ class DiziController extends GetxController {
     var d = await DiziService().getAllDizi();
     print("ddd " + d.toString());
     diziler.assignAll(d);
+  }
+
+  Dizi searchDiziById(int id) {
+    final dizi = diziler.where((p0) {
+      return p0.id == id;
+      // return p0;
+    });
+    return dizi.first;
   }
 }

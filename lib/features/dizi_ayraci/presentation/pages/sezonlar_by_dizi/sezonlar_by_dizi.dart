@@ -1,3 +1,4 @@
+import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/state_management/controller/dizi_controller.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/state_management/controller/sezon_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +17,15 @@ class SezonlarByDizi extends StatelessWidget {
               child: ListTile(
                 title:
                     Text(Get.find<SezonController>().sezonlar[index].sezonName),
-                subtitle: Text(Get.find<SezonController>()
-                    .sezonlar[index]
-                    .parentDiziId
-                    .toString()),
+                subtitle: Text(Get.find<DiziController>()
+                    .searchDiziById(Get.find<SezonController>()
+                        .sezonlar[index]
+                        .parentDiziId)
+                    .diziName),
+                // subtitle: Text(Get.find<SezonController>()
+                //     .sezonlar[index]
+                //     .parentDiziId
+                //     .toString()),
               ),
             );
           })),
