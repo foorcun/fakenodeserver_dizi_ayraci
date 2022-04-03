@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:http/http.dart' as http;
+
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class MainScreenGetx extends StatelessWidget {
@@ -80,6 +82,19 @@ class MainScreenGetx extends StatelessWidget {
                                         child: Text("Evet"),
                                         onPressed: () async {
                                           // await cDizi.delete();
+                                          print(Get.find<DiziController>()
+                                              .diziler[index]
+                                              .diziName);
+
+                                          //https://www.youtube.com/watch?v=jymr1hEvfkM   //28:00 civarları
+                                          var uri = Uri.parse(
+                                              "http://localhost:3000/diziler/${Get.find<DiziController>().diziler[index].id}");
+                                          // var response =
+                                          await http.delete(uri).then(
+                                              (value) => print(value.body));
+                                          // print(response.body);
+                                          _loadData();
+
                                           Get.back();
                                         },
                                       ),
