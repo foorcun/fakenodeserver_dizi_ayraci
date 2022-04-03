@@ -28,7 +28,7 @@ class DiziController extends GetxController {
     super.onInit();
   }
 
-  void fetchDiziler() async {
+  Future<void> fetchDiziler() async {
     var d = await DiziService().getAllDizi();
     print("ddd " + d.toString());
     diziler.assignAll(d);

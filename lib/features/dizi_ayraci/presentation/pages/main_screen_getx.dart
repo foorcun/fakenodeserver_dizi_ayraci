@@ -7,8 +7,14 @@ import 'package:get/get.dart';
 class MainScreenGetx extends StatelessWidget {
   MainScreenGetx({Key? key}) : super(key: key);
 
+  _loadData() async {
+    //https://www.youtube.com/watch?v=q2vUKcrL5CI
+    await Get.find<DiziController>().fetchDiziler();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _loadData();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: _floatingPrint,
