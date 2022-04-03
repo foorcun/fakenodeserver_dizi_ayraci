@@ -10,6 +10,11 @@ class MainScreenGetx extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: _floatingPrint,
+        tooltip: 'Add new Dizi',
+        child: const Icon(Icons.add),
+      ),
       body: Obx(() =>
           // Get.find<DiziController>().diziler.length != 0
           //     ? Text("${Get.find<DiziController>().diziler[0].diziName}")
@@ -37,5 +42,9 @@ class MainScreenGetx extends StatelessWidget {
                 );
               })),
     );
+  }
+
+  void _floatingPrint() {
+    Get.toNamed("/AddDiziView");
   }
 }

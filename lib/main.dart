@@ -1,3 +1,4 @@
+import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/add_dizi/add_dizi_view.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/main_screen_getx.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/sezonlar/sezon_screen.dart';
 import 'package:fakenodeserver_dizi_ayraci/features/dizi_ayraci/presentation/pages/sezonlar_by_dizi/sezonlar_by_dizi.dart';
@@ -36,6 +37,7 @@ class HttpApp extends StatelessWidget {
         GetPage(name: "/main_screen_getx", page: () => MainScreenGetx()),
         GetPage(name: "/SezonScreen", page: () => SezonScreen()),
         GetPage(name: "/SezonlarByDizi", page: () => SezonlarByDizi()),
+        GetPage(name: "/AddDiziView", page: () => AddDiziView()),
       ],
     );
   }
