@@ -10,7 +10,29 @@ class SezonlarByDizi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(() => ListView.builder(
+      body: SezonlarListViewbuilder(),
+    );
+  }
+}
+
+class SezonlarListViewbuilder extends StatelessWidget {
+  const SezonlarListViewbuilder({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      if (Get.find<SezonController>().isLoading == true) {
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      } else if (Get.find<SezonController>().sezonlar.length == 0) {
+        return Center(
+          child: Text("Sezon ekleyiniz"),
+        );
+      }
+      return ListView.builder(
           itemCount: Get.find<SezonController>().sezonlar.length,
           itemBuilder: (context, index) {
             return Card(
@@ -28,7 +50,7 @@ class SezonlarByDizi extends StatelessWidget {
                 //     .toString()),
               ),
             );
-          })),
-    );
+          });
+    });
   }
 }

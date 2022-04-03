@@ -6,6 +6,7 @@ class SezonController extends GetxController {
   final sezonlar = <Sezon>[].obs;
   final parentDiziId = 0.obs;
 
+  final isLoading = true.obs;
   // final secilenDiziId = 0.obs;
 
   @override
@@ -21,8 +22,10 @@ class SezonController extends GetxController {
   }
 
   void fetchSezonlar(int parentDiziId) async {
+    isLoading.value = true;
     var s = await SezonService.getSezonlarByDizi(parentDiziId);
     sezonlar.assignAll(s);
+    isLoading.value = false;
   }
 
   setSecilenDiziId(int secilenId) {
